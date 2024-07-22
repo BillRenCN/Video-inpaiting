@@ -68,11 +68,12 @@ def main():
     words = read_words(text_file_path)
     image_files = [f for f in os.listdir(images_folder) if os.path.isfile(os.path.join(images_folder, f))]
     
-    for index, image_file in enumerate(image_files):
+    for image_file in image_files:
         image_path = os.path.join(images_folder, image_file)
         random_words = get_random_words(words)
-        output_image_path = os.path.join(output_folder, f'processed_{index}.png')
-        mask_image_path = os.path.join(mask_folder, f'mask_{index}.png')
+        base_filename = os.path.splitext(image_file)[0]
+        output_image_path = os.path.join(output_folder, f'{base_filename}_processed.png')
+        mask_image_path = os.path.join(mask_folder, f'{base_filename}_mask.png')
         
         process_image(image_path, output_image_path, mask_image_path, random_words, font_path)
 
