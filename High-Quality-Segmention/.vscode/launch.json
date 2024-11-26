@@ -1,0 +1,22 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+
+		
+		{
+			"name": "combined_inference.py",
+			// "type": "debugpy",
+			"type": "python",
+			"request": "launch",
+			"program": "${file}",
+			"console": "integratedTerminal",
+			"args": [
+				// "${command:pickArgs}",
+				"--dir", "testIn", "--model", "weights/Exp_ID_2024-09-19_01:10:53/model_45000", "--output", "Output2", "--clear"
+			]
+		}
+	]
+}
