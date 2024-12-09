@@ -29,6 +29,17 @@ This repository provides tools for generating a large-scale subtitle segmentatio
 
 ---
 
+## Introduction
+
+Accurate text segmentation is essential for text-related generative tasks, including text inpainting, editing, and style transfer. However, current methods often fall short in addressing the complexities of multilingual subtitles, hindered by the lack of a customizable and diverse dataset as well as an efficient pipeline for handling subtitle-specific challenges. In this repository, we introduce **ADET80k**, a customizable synthetic dataset built upon ADE20k, featuring multilingual subtitle text in four languages—English, Chinese, Japanese, and Korean—with diverse typographical effects.
+
+To address subtitle segmentation, we propose a two-stage framework:
+
+1. **DeepLabv3+** generates coarse masks.
+2. These masks are subsequently refined using the **Continuous Refinement Model (CRM)** to achieve precise, high-resolution outputs.
+
+---
+
 ## Workflow
 
 ### 1. Generate the Subtitle Dataset
@@ -58,6 +69,7 @@ This will generate the dataset into the `generated_dataset` folder:
 ---
 
 ### 2. Compile the Dataset
+
 Once the dataset is generated, organize it for training and validation:
 - Use `./train` for training data and `./validate` for validation data.
 - Rename the dataset folder as `my_dataset` and move it to the `High-Quality-Segmentation` folder:
@@ -113,19 +125,39 @@ python combined_inference.py --dir 3b1b_all_language --model weights/Exp_ID_2024
 ---
 
 ## Example Results
+
 Below are examples of generated subtitles and their corresponding refined masks:
 
-1. **English Subtitle**:
-   - Original Image: `examples/english_original.jpg`
-   - Refined Mask: `examples/english_refined.jpg`
+### Dataset Examples
 
-2. **Japanese Subtitle**:
-   - Original Image: `examples/japanese_original.jpg`
-   - Refined Mask: `examples/japanese_refined.jpg`
+#### Original Subtitles
+
+1. **English Subtitle**:
+   ![English Subtitle](img/en_img.jpg)
+
+2. **Chinese Subtitle**:
+   ![Chinese Subtitle](img/ch_img.jpg)
+
+3. **Japanese Subtitle**:
+   ![Japanese Subtitle](img/ja_img.jpg)
+
+4. **Korean Subtitle**:
+   ![Korean Subtitle](img/ko_img.jpg)
+
+#### YouTube Evaluation Results
+
+1. **YouTube English Subtitle**:
+   ![YouTube English Original](img/you_en_img.jpg)
+   ![YouTube English Segmented](img/you_en_seg.png)
+
+2. **YouTube Japanese Subtitle**:
+   ![YouTube Japanese Original](img/you_ja_img.jpg)
+   ![YouTube Japanese Segmented](img/you_ja_seg.png)
 
 ---
 
 ## Requirements
+
 - Python 3.8+
 - Dependencies:
   - `Pillow`
@@ -135,4 +167,15 @@ Below are examples of generated subtitles and their corresponding refined masks:
 
 ---
 
-Feel free to reach out if you encounter any issues or have questions!
+## Citation
+If you use this dataset or pipeline in your research, please cite our work:
+
+```
+@article{yourpaper2025,
+  title={ADET80k: Multilingual Subtitle Dataset with Coarse-to-Fine Text Segmentation},
+  author={Your Name and Collaborators},
+  journal={WACV 2025},
+  year={2025}
+}
+```
+
