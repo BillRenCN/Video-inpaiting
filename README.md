@@ -162,7 +162,7 @@ To facilitate easy use and testing, we provide pre-trained model weights:
 
 1. **Multilingual Subtitle Segmentation Model**:
    - Trained on subtitles in four languages (English, Chinese, Japanese, Korean).
-   - Download the weights: [Multilingual Model](https://drive.google.com/file/d/1WXnwV2vnZBwQ3na8voYnJOxwC4XY54UN/view?usp=sharing)
+   - Download the weights: [Multilingual Model](https://drive.google.com/file/d/1GVzVdrb7YtvJUTqii-xdkm_qd6d-DRMB/view?usp=sharing)
 
 2. **English-Only Subtitle Segmentation Model**:
    - Trained specifically on English subtitles.
